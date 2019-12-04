@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don hang : id </title>
+    <link rel="stylesheet" href="/styles/admin/stylesdhdt.css">
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/header %>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Orders</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Orders</li>
+            </ol>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 ">
+                    <div class="text-center my-3">
+                        <h2>Thông tin đơn hàng </h2>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Images</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach(function(x){ %>
+                                <tr>
+                                    <td>
+                                        <img src="/images/products/<%= x.item.images %>" alt="" width="30" height="30">
+                                    </td>
+                                    <td>
+                                        <%= x.item.title %>
+                                    </td>
+                                    <td>
+                                        <%= x.qty %>
+                                    </td>
+                                    <td>
+                                        <%= x.item.price %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                    <tr>
+                                        <td>Total Price :
+                                            <b><%= sum %>$</b></td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-7">
+                    <div class="text-center">
+                        <h2>Thông tin khách hàng</h2>
+                    </div>
+                    <div class="col-12">Name</div>
+                    <div class="col-12 info">
+                        <%= order.receiver %>
+                    </div>
+                    <div class="col-12">Telephone Number</div>
+                    <div class="col-12 info">
+                        <%= order.receiverTel %>
+                    </div>
+                    <div class="col-12">Address</div>
+                    <div class="col-12 info">
+                        <%= order.Address %>
+                    </div>
+                    <div class="col-12">Ghi chú giao hàng</div>
+                    <div class="col-12 info">
+                        <%= order.note %>
+                    </div>
+                    <div class="my-3">
+                        <a class="btn btn-outline-success" href="/admin/order_resolve/<%= order._id %>">Resolve</a>
+                        <a class="btn btn-outline-danger" href="/admin/order_reject/<%= order._id %>">Reject</a>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>

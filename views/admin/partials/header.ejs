@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top" style="padding: 40px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+                </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item">
+                <a class="nav-link" href="/"><i class="fas fa-globe-asia"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/contact">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/orders">Đơn hàng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/add-product">New products</a>
+            </li>
+        </ul>
+
+        <form class="form-inline" action="/admin/search" method="GET">
+            <input class="form-control " type="search" placeholder="Search" aria-label="Search" name="title">
+            <button class="btn btn-outline-success mr-3 ml-2"><i class="fas fa-search"></i></button>
+        </form>
+        <a class=" nav-item py-2 x" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+            <i class="fas fa-user"></i>
+        </a>
+        <div class="collapse" id="collapseExample">
+            <div class="xyz">
+                <a href="/admin/signup " class="dropdown-item ">Create new Admin</a>
+                <a class="dropdown-item " href="# ">Change Pass Word</a>
+                <a class="dropdown-item " href="# ">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>

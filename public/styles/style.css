@@ -1,0 +1,119 @@
+.container-fluid {
+    padding: 0;
+}
+
+body {
+    background: rgb(229, 250, 227) !important;
+}
+
+
+/* css index.js */
+
+.new-product {
+    padding: 30px 0;
+    font-weight: 700;
+}
+
+.carousel {
+    padding: 0;
+    top: 120%;
+}
+
+.carousel img {
+    height: 100%;
+}
+
+.card {
+    padding: 0;
+    background: #d8e6d7;
+    margin: 5px 0;
+}
+
+.card:hover a {
+    text-decoration: none;
+    color: green;
+    font-weight: 700;
+}
+
+.shipping_icon {
+    margin: 0 5px;
+}
+
+.shipping_content :hover {
+    color: green;
+}
+
+.shipping {
+    padding: 6% 0;
+}
+
+.shipping_item a {
+    text-decoration: none;
+    color: #8ce485;
+}
+
+
+/* end css index.js */
+
+
+/* css products.js */
+
+.dropdown-toggle {
+    width: 100%;
+    background: #d8e6d7;
+    border: none;
+    border-bottom: solid 1px #8ce485;
+    color: rgb(80, 121, 97);
+}
+
+.dropdown {
+    padding: 0;
+}
+
+.dropdown-menu {
+    width: 99%;
+}
+
+.categories {
+    text-align: center;
+    background: #bde5ba;
+    font-weight: 700;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+/* end css products */
+
+
+/* css contact */
+
+.contact-info {
+    margin-top: 10%;
+}
+
+.contact-info h2 {
+    margin-bottom: 10%;
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form button {
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* end css contact */
+
+.abc {
+    background: #d8e6d7;
+    border: solid 1px #8ce485;
+}
+
+.abc a:hover {
+    text-decoration: none;
+}

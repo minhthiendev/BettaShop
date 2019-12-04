@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/header %>
+        <a href="/admin" class="btn btn-outline-secondary"><i class="fas fa-backward"></i></a>
+        <div class="container ">
+            <div class="col-md-12 my-5">
+                <h2 class="text-center">Edit product : title</h2>
+            </div>
+            <form action="/admin/edit/<%=product.productId %>" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div><img src="/images/products/<%= product.images %>" alt=""></div>
+                    <label for="exampleInputEmail1">Image</label>
+                    <input type="file" class="form-control" name="image" <%=product.images %>">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" value="<%= product.title %>">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" class="form-control" name="price" value="<%= product.price %>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" value="<%= product.quantity %>">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+</body>
+
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrator</title>
+    <% include ./partials/head %>
+</head>
+
+<body>
+    <% include ./partials/header %>
+        <div class="container">
+            <table class="table">
+                <thead>
+
+                    <tr style="color: rgb(51, 49, 192); font-weight: 800;">
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>price</th>
+                        <th>Quantity</th>
+                        <th>Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(function(pro) { %>
+                        <tr>
+                            <td>
+                                <%= pro.title %>
+                            </td>
+                            <td> <a href=""><img src="images/products/<%= pro.images %>" alt="" width="40px" height="40px"> </a></td>
+                            <td>
+                                <%= pro.price %>
+                            </td>
+                            <td>
+                                <%= pro.quantity %>
+                            </td>
+                            <td><a href="/admin/edit-product/<%= pro.productId %>"><i class="far fa-edit"></i></a>&nbsp;&nbsp;
+                                <a href="/admin/delete-products/<%= pro.productId %>"><i class="fas fa-times"></i></a></td>
+                        </tr>
+                        <%  }) %>
+
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+</html>

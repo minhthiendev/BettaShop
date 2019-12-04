@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home page</title>
+    <link rel="stylesheet" href="styles/style_header.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-footer.css">
+    <% include ./partials/head %>
+        <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <% include ./partials/header %>
+
+            <!-- banner -->
+            <div class="container" style="text-align: justify;">
+                <div class="row py-3">
+
+                    <div class="">
+                        <!-- <img src="images/banner.PNG" class="" alt="..."> -->
+                        <div class="col-md-12  pl-5">
+                        </div>
+                        <h5>Giới thiệu</h5>
+                        <p><b>NUOI LA CHET</b> được thành lập vào tháng <b>01 năm 200 TCN</b> sở hữu tất cả các dòng cá betta được ưu chuộng tại nhất việt nam đáp ứng nhu cầu cho khách hàng, nhầm giúp mọi người thích cá BETTA ( Cá Xiêm , Phướng ) dễ dàng
+                            chọn lựa và sở hữu cho mình 1 bé betta mà không cần phải đi đâu cả. sau đây là những điểm mạnh mà <b>NUOI LA CHET</b> đáp ứng cho bạn</p>
+                        <h5>Không Đụng Hàng </h5>
+                        <p>Bạn chỉ cần ngồi ở nhà chọn cá betta , <b>NUOI LA CHET</b> sẽ tư vấn tận tình, tận tâm cho các bạn , gửi hình và video để bạn xem rỏ hơn những dòng được ưu chuộng và các dòng theo nhu cầu của bạn . khi các bạn đã tìm được 1 cá
+                            BETTA ưng ý và tiến hành đặt cá <b>NUOI LA CHET</b> sẽ chốt và gửi cá đến tận nhà cho các bạn bằng hình thức COD , COD nghĩa là giao hàng thanh toán. các bạn nhận cá rồi mới thanh toán cho người giao hàng. các bạn có thấy tiện
+                            lợi không nào , cùng mình khám phá thêm nhé,</p>
+                        <h5>Giao Hàng Nhanh</h5>
+                        <p>Các bạn ở xa như khu vực miền bắc khi đã chốt được 1 con cá ưng ý, nhưng không biết khi nào được nhận hàng , với <b>NUOI LA CHET</b> sẽ giúp các bạn biết chính xác thời gian, - Với những đơn hàng ở xa PENTA sẽ gửi máy bay nhầm
+                            giúp các nhận hàng nhanh hơn khoảng thời gian nhận từ 1 Ngày Đến 3 Ngày , kể từ ngày chốt đơn</p>
+                        <div class="text-center"><img src="images/giaohang.jpg" alt="..."></div>
+                        <h5>Nhiệt Tâm Chu Đáo</h5>
+                        <p>Đến với Penta các bạn có thể thoải mái tâm sự và đặt ra những cầu hỏi những gì chưa hiểu về cá betta , cũng như cách chăm sóc , cách thay nước , cách cho cá ăn , v.v Đội ngủ nhân viên sẽ kiếm tra và trả lời nhanh nhất cho các bạn
+                            không phải chờ lâu nhé</p>
+                        <div class="text-center"><img src="images/nv.jpg" alt="..."></div>
+                        <h5>Nhiều Sự Lựa Chọn</h5>
+                        <p><b>NUOI LA CHET</b> đáp ứng theo nhu cầu khách , rất nhiều dòng cá betta được penta lựa chọn tại shop , Bạn thích cá HALFMOON betta , Penta đáp ứng được cho bạn, Bạn thích cá DUMBLE betta Penta sẽ giúp bạn , Bạn thích các dòng
+                            mới như cá NEMO betta Penta sẽ chọn cho bạn , và rất nhiều dòng khác cùng các bảng màu phong phú , như : MÀU White ( Trắng) , Red ( Đỏ ) , Lavender ( Tím ), Yellow ( Vàng ), Bule ( Xanh ) cùng các màu cao cấp hơn như Chấm GALAXY
+                            , Black v.v
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="col-12 new-product" style="text-align: center;">Hot Products</div>
+                                <div class="card col-md-12 my-0">
+                                    <a href="/products_details/<%= products[0].productId %> ">
+                                                    <img src="images/products/<%= products[0].images %>" class="card-img-top" alt="..." style="width: 100%;height: 100%;">
+                                                </a>
+                                </div>
+                            </div>
+                            <div class="col-md-8 pr-3">
+                                <div class="row">
+                                    <div class="col-md-12 new-product" style="text-align: center;">Products</div>
+                                    <div class="card col-md-3 col-md-4 ">
+                                        <a href="/products_details/<%= products[1].productId %> ">
+                                                        <img src="images/products/<%= products[1].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[1].title %></h5>
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="card col-md-3 col-md-4 ">
+                                        <a href="/products_details/<%= products[2].productId %> ">
+                                                        <img src="images/products/<%= products[2].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px;">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[2].title %></h5>
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="card col-md-3  col-md-4">
+                                        <a href="/products_details/<%= products[3].productId %> ">
+                                                        <img src="images/products/<%= products[3].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px;">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[3].title %></h5>
+                        
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="card col-md-3 col-md-4 ">
+                                        <a href="/products_details/<%= products[4].productId %> ">
+                                                        <img src="images/products/<%= products[4].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px;">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[4].title %></h5>
+                        
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="card col-md-3 col-md-4 ">
+                                        <a href="/products_details/<%= products[5].productId %> ">
+                                                        <img src="images/products/<%= products[5].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px;">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[5].title %></h5>
+                        
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="card col-md-3  col-md-4">
+                                        <a href="/products_details/<%= products[6].productId %> ">
+                                                        <img src="images/products/<%= products[6].images %>" class="card-img-top" alt="..." style="width: 100%;height: 200px;">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><%= products[6].title %></h5>
+                                                        </div>
+                                                    </a>
+                                    </div>
+                                    <div class="col-md-12 new-product" style="text-align: center; background: rgb(189, 223, 243);"><a href="/products">See more</a></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <h5>Bảo Hành</h5>
+                        <p>Đến với <b>NUOI LA CHET</b> các bạn có thể yên tâm vì hầu như mọi rủi rỏ của khách hàng <b>NUOI LA CHET</b> đã triệt tiêu toàn bộ . Ví dụ Tình Huống ( Cá chết trong quá trình vận chuyễn shop sẽ bảo hành cho các bạn đổi cá khác
+                            cùng loại cho các bạn. trong trường hợp ko có cá theo nhu cầu của bạn shop sẽ hoàn tiền lại cho các bạn nhé )</p>
+                        <div class="text-center"><img src="images/maintain.jpg" alt="..."></div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    <!-- end banner -->
+    <!-- shipping -->
+    <div class="row">
+        <div class="container">
+            <div class="row shipping">
+
+                <div class="col-md-3  shipping_item">
+                    <a href="" class="d-flex">
+                        <div class="shipping_icon"><img src='images/1.png' alt='shipping icon'></div>
+
+                        <div class="shipping_content">
+                            <h6> Free Shipping</h6>
+                            <p> On Over $100 (max: 5$)</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 shipping_item">
+                    <a href="" class="d-flex">
+                        <div class="shipping_icon"><img src='images/3.png' alt='shipping icon'></div>
+
+                        <div class="shipping_content">
+                            <h6> Money Return</h6>
+                            <p>Back guarantee under 7 days</p>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-md-3 shipping_item">
+                    <a href="" class="d-flex">
+                        <div class="shipping_icon"><img src='images/2.png' alt='shipping icon'></div>
+
+                        <div class="shipping_content">
+                            <h6> Member Discount</h6>
+                            <p>Free Shipping On $70</p>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+
+                <div class="col-md-3 shipping_item">
+                    <a href="" class="d-flex">
+                        <div class="shipping_icon"><img src='images/4.png' alt='shipping icon'></div>
+
+                        <div class="shipping_content">
+                            <h6> Online Support 12/7</h6>
+                            <p>Support online 24 hours a day</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- end shipping -->
+    <% include ./partials/footer %>
+        </div>
+</body>
+
+</html>

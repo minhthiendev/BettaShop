@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <% include ../../partials/head %>
+        <link rel="stylesheet" href="styles/style_header.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/style-footer.css">
+</head>
+
+<body>
+
+    <div class="row">
+        <nav aria-label="breadcrumb" class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sign in</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="col-md-12 text-center">
+        <h2>Log In</h2>
+        <h4>&nbsp;</h4>
+    </div>
+    <div class="container">
+        <form action="/login" method="POST">
+            <% if (message) { %>
+                <div class="form-group ">
+                    <div class="alert alert-danger" role="alert">
+                        <%= message %>
+                    </div>
+                </div>
+                <% } %>
+                    <div class="form-group">
+                        <label for="email" class=" col-form-label">Email</label>
+
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" class=" col-form-label">Password</label>
+
+                        <input type="password" class="form-control" name="pass" placeholder="Password">
+
+                    </div>
+                    <div class="form-group">
+
+                        <a href="/signUp" style="text-decoration: none; color: green;">Create New Account</a>
+
+                    </div>
+                    <div class="form-group">
+
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="check">
+                            <label class="form-check-label" for="check">Remember your password</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+
+                    </div>
+        </form>
+    </div>
+    <!-- <% include ../../partials/footer %> -->
+</body>
+
+</html>

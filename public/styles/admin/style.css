@@ -1,0 +1,49 @@
+.navbar a {
+    color: aliceblue !important;
+}
+
+body,
+a {
+    /* color: aliceblue!important; */
+    font-weight: 700;
+}
+
+li:hover a {
+    color: blue !important;
+}
+
+ul {
+    text-decoration: none;
+}
+
+li:hover {
+    background: #DDD;
+    border-radius: 10px;
+}
+
+.x {
+    margin-left: 10px;
+    position: relative;
+    border-radius: 20px;
+    border: solid 1px #dcdde6;
+    padding: 12px;
+}
+
+.xyz a {
+    color: #000 !important;
+}
+
+.x {
+    position: relative;
+}
+
+.xyz {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #dcdde6;
+}
+
+a:hover {
+    text-decoration: none;
+}

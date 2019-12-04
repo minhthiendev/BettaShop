@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cart</title>
+    <% include ../../partials/head %>
+</head>
+
+<body>
+    <% include ../../partials/header %>
+        <div class="row">
+            <nav aria-label="breadcrumb" class="col-md-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="container">
+            <% if (products) { %>
+                <div class="row">
+                    <table class="table ">
+                        <thead class="thead-dark ">
+                            <tr class="text-center ">
+                                <th scope="col ">#</th>
+                                <th scope="col ">image</th>
+                                <th scope="col ">Products name</th>
+                                <th scope="col ">Price($/con)</th>
+                                <th scope="col ">Option</th>
+                                <th scope="col ">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach(function(x){ %>
+                                <tr class="text-center ">
+                                    <td><a href="/delete_order/<%= x.item._id %>"><i class="fas fa-backspace "></i></a>
+                                    </td>
+                                    <td scope="row "><img src="/images/products/<%=x .item.images %>" alt="" width="40px" height="40px"> </td>
+                                    <td>
+                                        <%= x.item.title%>
+                                    </td>
+                                    <td>
+                                        <%= x.item.price %>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-outline-success btn-sm mr-2" href="/subtract/<%= x.item._id %>">&nbsp;&nbsp;<i class="fas fa-angle-down"></i>&nbsp;&nbsp;</a>
+                                        <a class="btn btn-outline-success btn-sm mr-2" href="">&nbsp;&nbsp;<%= x.qty %>&nbsp;&nbsp;</a>
+                                        <a class="btn btn-outline-success btn-sm mr-3" href="/plush/<%= x.item._id %>">&nbsp;&nbsp;<i class="fas fa-angle-up"></i>&nbsp;&nbsp;</a>
+
+                                    </td>
+                                    <td>
+                                        <%= x.price %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <h3>Total : $
+                                                <%= totalPrice %>
+                                            </h3>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center ">
+                                        <td>
+                                            <a class="btn btn-outline-success mr-1" href="/checkout">Check Out</a>
+                                            <a class="btn btn-outline-success" href="/products">Continue</a>
+                                        </td>
+
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+
+                </div>
+                <% } else { %>
+                    <div class="d-flex justify-content-center">
+                        <img src="images/empty-cart.png" alt="">
+                    </div>
+                    <% } %>
+        </div>
+        <% include ../../partials/footer %>
+</body>
+
+</html>

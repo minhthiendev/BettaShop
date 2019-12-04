@@ -1,0 +1,11 @@
+.info {
+    border: solid 0.8px #343a40;
+    background: rgb(216, 238, 238);
+    padding: 5px;
+    color: blue;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: none;
+}

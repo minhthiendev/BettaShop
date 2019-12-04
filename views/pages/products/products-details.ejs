@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Products id: </title>
+
+    <link rel="stylesheet" href="/styles/style_header.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar header navbar-expand-lg navbar-light sticky-top " style="background-color: #e3f2fd;">
+
+        <a class="navbar-brand pl-5" href="#"><img src="/images/logo.png" alt="logo" width="50" height="50"></a>
+        <button class="navbar-toggler btn btn-outline-success" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0 " action="/search" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Enter product name" name="title">
+                <button class="btn btn-outline-secondary " type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav  ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="/cart"><i class="fab fa-opencart"></i>
+                     <% if(sess){ %>
+                        <sup><span class="badge badge-danger">
+                        <%=sess.totalQty%>
+                        </span></sup>
+                        <% } %>
+                    </a>
+
+                </li>
+
+                <% if(cus){ %>
+                    <div class="x">
+                        <a class=" nav-item py-2 mr-5" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+                            <i><%= char %></i>
+                        </a>
+                    </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="xyz">
+                            <a href="/signin" class="dropdown-item ">
+                                <%= cus.email %>
+                            </a>
+                            <a class="dropdown-item " href="/signup">Change your information </a>
+                            <a href="/signin" class="dropdown-item ">Log out</a>
+
+                        </div>
+                    </div>
+                    <% }else { %>
+                        <a class=" nav-item py-2 x mr-5" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="xyz">
+                                <li><a href="/signin">Sign in</a></li>
+                                <li><a href="/signup">Sign up</a></li>
+                        </div>
+        </div>
+        <% } %>
+            </ul>
+            </div>
+    </nav>
+    <div class="row">
+        <nav aria-label="breadcrumb" class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products:
+                    <%= products.title %>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-1">
+            <img src="/images/products/<%= products.images %>" class="card-img-top " alt="... " style="width: 100%;height: 700; ">
+        </div>
+        <div class="col-md-7">
+            <h1 class="text-center">
+                <%= products.title %>
+            </h1>
+            <hr>
+            <div class="offset">
+                <h4>Price: $
+                    <%= products.price %>
+                </h4>
+                <span><h5>Available: <%= products.quantity %> </h5>
+                </div>
+                <hr>
+                <a class="btn btn-outline-success" href="/add/<%= products.productId %>"> Add to cart</a>
+                <a class="btn btn-outline-success" href="/products"> Continue</a>
+                <hr>
+                <div style="padding :100px 0 0 0;">
+                    <h3 >Thời gian dự kiến giao hàng</h3>
+                    <h4><i class="fas fa-truck"></i>Giao hàng trong 24h app dụng cho khu vực tp hcm</h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+       
+        <section id="footer">
+            <div class="container">
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Introduction</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>About Us</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Shipping</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Payment</a></li>
+        
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Login</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Sign in</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Sign up</a></li>
+        
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Address</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>37/8c Trinh Dinh Thao, Hoa Thanh, Tan Phu</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Tel: 0909090909</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i>minhthienpham0611@gmail.com</a></li>
+        
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                    </hr>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        <p class="xam"><b><a href="#">MT Best Betta</a></b> - No. 1 ornamental fish in Vietnam</p>
+                        <p class="h6 xam">&copy All right Reversed.<a class="text-green ml-2" href="" target="_blank">MTP</a></p>
+                    </div>
+                    </hr>
+                </div>
+            </div>
+        </section>
+
+</body>
+
+</html>
