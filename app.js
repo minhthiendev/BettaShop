@@ -34,6 +34,6 @@ app.use(cookieParser(process.env.secret));
 
 app.use('/', customer_router);
 app.use('/admin', admin_router);
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("server is running on port 3000");
 });
