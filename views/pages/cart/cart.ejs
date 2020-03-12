@@ -11,6 +11,7 @@
 
 <body>
     <% include ../../partials/header %>
+    
         <div class="row">
             <nav aria-label="breadcrumb" class="col-md-12">
                 <ol class="breadcrumb">
@@ -19,6 +20,7 @@
                 </ol>
             </nav>
         </div>
+        <div class="my-5"></div>
         <div class="container">
             <% if (products) { %>
                 <div class="row">
@@ -79,14 +81,20 @@
                         </tbody>
                     </table>
                     <hr>
-
+                    
                 </div>
+               <div class="row">
+                <div class="my-5"></div>
+                
+               </div>
                 <% } else { %>
                     <div class="d-flex justify-content-center">
                         <img src="images/empty-cart.png" alt="">
                     </div>
                     <% } %>
         </div>
+        
+        <div class="my-5 py-5"></div>
         <% include ../../partials/footer %>
 </body>
 

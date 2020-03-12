@@ -15,88 +15,90 @@
 <body>
     <% include ../../partials/header %>
 
+    <div class="row">
+        <nav aria-label="breadcrumb" class="col-md-12">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container">
+        <% if(products) { %>
         <div class="row">
-            <nav aria-label="breadcrumb" class="col-md-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Products</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="container">
-            <% if(products) { %>
-                <div class="row">
 
-                    <div class="col-12" style=" text-align: center; font-weight: 700;margin: 20px 0; ">Products</div>
-                    <hr width="50%">
-                    <div class="row col-12">
-                        <% products.forEach(function(product) { %>
-                            <% if(product.quantity>0){ %>
-                                <div class="card col-md-3 p-0">
-                                    <a href="/products_details/<%= product.productId %> ">
-                                    <img src="images/products/<%= product.images %> " class="card-img-top" alt="..." style="height: 200px;">
-                                <div class="card-body ">
-                                    <h5 class="card-title ">
-                                        <%= product.title %>
-                                    </h5>
-                                    <p class="card-text ">$
-                                        <%= product.price %>
-                                    </p>
-                                    <p class="card-text ">Available: 
-                                        <%= product.quantity %>
-                                    </p>
-                                </div>
-                            </a>
-                                </div>
-                                <% }else{ %>
-                                    <div class="card col-md-3 p-0">
-                                        <img src="images/products/<%= product.images %> " class="card-img-top" alt="..." style="height: 200px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title ">
-                                                <%= product.title %>
-                                            </h5>
-                                            <p class="card-text badge badge-danger py-2">
-                                                Out of stock
-                                            </p>
-
-                                        </div>
-                                        </a>
-                                    </div>
-                                    <% } %>
-                                        <% }) %>
-                    </div>
+            <div class="col-12" style=" text-align: center; font-weight: 700;margin: 20px 0; ">Products</div>
+            <hr width="50%">
+            <div class="row col-12">
+                <% products.forEach(function(product) { %>
+                <% if(product.quantity>0){ %>
+                <div class="card col-md-3 p-0">
+                    <a href="/products_details/<%= product.productId %> ">
+                        <img src="images/products/<%= product.images %> " class="card-img-top" alt="..."
+                            style="height: 200px;">
+                        <div class="card-body ">
+                            <h5 class="card-title ">
+                                <%= product.title %>
+                            </h5>
+                            <p class="card-text ">$
+                                <%= product.price %>
+                            </p>
+                            <p class="card-text ">Available:
+                                <%= product.quantity %>
+                            </p>
+                        </div>
+                    </a>
                 </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-12 d-flex justify-content-center ">
-                <nav aria-label="Page navigation example ">
-                    <ul class="pagination ">
-                        <li class="page-item ">
+                <% }else{ %>
+                <div class="card col-md-3 p-0">
+                    <img src="images/products/<%= product.images %> " class="card-img-top" alt="..."
+                        style="height: 200px;">
+                    <div class="card-body ">
+                        <h5 class="card-title ">
+                            <%= product.title %>
+                        </h5>
+                        <p class="card-text badge badge-danger py-2">
+                            Out of stock
+                        </p>
 
-                            <a class="page-link " href="?page=<%=step-1 %>" aria-label="Previous ">
-                                <span aria-hidden="true ">&laquo;</span>
-                                <span class="sr-only ">Previous</span>
-                            </a>
-                        </li>
-                        <% for(var i=1 ; i <=total_page;i++){ %>
-                            <li class="page-item">
-                                <a class="page-link" href="?page=<%=i %>">
-                                    <%= i %>
-                                </a>
-                            </li>
-                            <% } %>
-
-                                <a class="page-link " href="?page=<%=step+1 %> " aria-label="Next ">
-                                    <span aria-hidden="true ">&raquo;</span>
-                                    <span class="sr-only ">Next</span>
-                                </a>
-                                </li>
-                    </ul>
-                </nav>
+                    </div>
+                    </a>
+                </div>
+                <% } %>
+                <% }) %>
             </div>
         </div>
-        <% } %>
-            <% include ../../partials/footer %>
+    </div>
+    <div class="row ">
+        <div class="col-md-12 d-flex justify-content-center ">
+            <nav aria-label="Page navigation example ">
+                <ul class="pagination ">
+                    <li class="page-item ">
+
+                        <a class="page-link " href="?page=<%=step-1 %>" aria-label="Previous ">
+                            <span aria-hidden="true ">&laquo;</span>
+                            <span class="sr-only ">Previous</span>
+                        </a>
+                    </li>
+                    <% for(var i=1 ; i <=total_page;i++){ %>
+                    <li class="page-item">
+                        <a class="page-link" href="?page=<%=i %>">
+                            <%= i %>
+                        </a>
+                    </li>
+                    <% } %>
+
+                    <a class="page-link " href="?page=<%=step+1 %> " aria-label="Next ">
+                        <span aria-hidden="true ">&raquo;</span>
+                        <span class="sr-only ">Next</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <% } %>
+    <% include ../../partials/footer %>
 </body>
 
 </html>

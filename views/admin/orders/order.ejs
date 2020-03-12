@@ -42,11 +42,7 @@
                                     <%= sum[i++] %>
                                 </td>
                                 <td>
-                                    <% if (x._id == check) { %>
-                                        <%= status %>
-                                            <% } else { %>
-                                                <%= status %>
-                                                    <% } %>
+                                    <%= x.status %>
                                 </td>
                                 <td><a href="/admin/ordersDetails/<%= x._id %>"><i class="fas fa-eye"></i></a>&nbsp;&nbsp;
                                 </td>
@@ -72,13 +68,11 @@
                                     <td>
                                         Tổng giá trị :
                                         <%= totalprice %>
-
                                     </td>
                                 </tr>
-
                     </tbody>
                 </table>
-                <% } %>
+                <% }  %>
 </body>
 
 </html>

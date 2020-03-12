@@ -7,7 +7,8 @@ var order_Schema = new schema({
     receiver: String,
     receiverTel: String,
     Address: String,
-    note: String
+    note: String,
+    status: String
 
 });
 

@@ -19,14 +19,16 @@ body {
     top: 120%;
 }
 
-.carousel img {
-    height: 100%;
-}
-
 .card {
-    padding: 0;
+    padding: 0 !important;
     background: #d8e6d7;
     margin: 5px 0;
+}
+
+
+.card img{
+    width: 100%;
+    height: 200px;
 }
 
 .card:hover a {
@@ -116,4 +118,11 @@ body {
 
 .abc a:hover {
     text-decoration: none;
+}
+
+.map {
+    padding: 40px;
+    margin: 0;
+    background-image: url('../images/c.jpg');
+    color: #dfd110;
 }

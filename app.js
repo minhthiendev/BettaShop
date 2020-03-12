@@ -9,7 +9,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var customer_router = require('./routes/customers');
 var admin_router = require('./routes/admin');
-var passport = require('passport');
+var passport =require('passport')
 
 var app = express();
 
